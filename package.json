@@ -1,5 +1,5 @@
 {
-  "name": "vantatranslation",
+  "name": "vanta-novel",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,7 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/font": "^14.0.4",
+    "animate.css": "^4.1.1",
+    "daisyui": "^4.5.0",
     "next": "14.0.4",
+    "next-images": "^1.8.5",
     "react": "^18",
     "react-dom": "^18"
   },
@@ -19,7 +23,8 @@
     "eslint-config-next": "14.0.4",
     "postcss": "^8",
     "prettier": "^3.1.1",
-    "prettier-plugin-tailwindcss": "^0.5.10",
+    "prettier-plugin-tailwindcss": "^0.5.11",
+    "tailwind-scrollbar": "^3.0.5",
     "tailwindcss": "^3.3.0"
   }
 }
