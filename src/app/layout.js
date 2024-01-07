@@ -16,7 +16,7 @@ export const metadata = {
 
 const RootLayout = ({ children }) => (
   <html lang="en" className={`scroll-smooth ${poppins.className}`}>
-    <body className="bg-gray-100 min-h-screen">
+    <body className="bg-gray-100 min-h-screen relative">
       {children}
       <Footer />
     </body>
