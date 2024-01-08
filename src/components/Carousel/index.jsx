@@ -1,70 +1,27 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react'
+import React from "react";
+import Image from "next/image";
 
-const Carousel = () => {
+const Carousel = ({ images }) => {
   return (
-    <>
-      <div className="carousel w-full">
-        <div id="slide1" className="carousel-item relative w-full">
+    <div className="carousel carousel-center max-w-full space-x-4 bg-color-primary p-4">
+      {images.map((image, index) => (
+        <div
+          key={index}
+          className="carousel-item relative max-h-[48rem] max-w-full overflow-hidden rounded-lg"
+        >
           <Image
-            src="/background/background-1.webp"
-            className="w-full" alt='...' width={1280} height={720}
+            src={image.src}
+            className="h-full w-full rounded-lg object-cover transition-all duration-500 hover:scale-105"
+            alt={image.alt}
+            width={1280} height={576}
           />
-          <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-            <Link href="#slide4" className="btn btn-circle">
-              ❮
-            </Link>
-            <Link href="#slide2" className="btn btn-circle">
-              ❯
-            </Link>
-          </div>
+          <h1 className="absolute bottom-0 left-0 right-0 mx-auto bg-black bg-opacity-25 p-4 text-center text-2xl font-bold text-color-whity backdrop-opacity-75">
+            {image.description}
+          </h1>
         </div>
-        <div id="slide2" className="carousel-item relative w-full">
-          <Image
-            src="/background/background-2.webp"
-            className="w-full" alt='...' width={1280} height={720}
-          />
-          <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-            <Link href="#slide1" className="btn btn-circle">
-              ❮
-            </Link>
-            <Link href="#slide3" className="btn btn-circle">
-              ❯
-            </Link>
-          </div>
-        </div>
-        <div id="slide3" className="carousel-item relative w-full">
-          <Image
-            src="/background/background-3.webp"
-            className="w-full" alt='...' width={1280} height={720}
-          />
-          <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-            <Link href="#slide2" className="btn btn-circle">
-              ❮
-            </Link>
-            <Link href="#slide4" className="btn btn-circle">
-              ❯
-            </Link>
-          </div>
-        </div>
-        <div id="slide4" className="carousel-item relative w-full">
-          <Image
-            src="/background/background-4.webp"
-            className="w-full" alt='...' width={1280} height={720}
-          />
-          <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-            <Link href="#slide3" className="btn btn-circle">
-              ❮
-            </Link>
-            <Link href="#slide1" className="btn btn-circle">
-              ❯
-            </Link>
-          </div>
-        </div>
-      </div>
-    </>
+      ))}
+    </div>
   );
-}
+};
 
-export default Carousel
+export default Carousel;
